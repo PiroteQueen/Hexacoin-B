@@ -48,7 +48,7 @@ async def send_sms_code_to_phone_number(*, session=SessionDep, phone_number: str
         client_ip: 客户端IP地址
     """
     if settings.ENVIRONMENT != "production":
-        sms_code = 9999
+        sms_code = 1205
     else:
         sms_code = RandomGenerator().generate_sms_code(length=4)
         # await alibaba.send_sms_code_async(code=verification_code, phone_number=phone_number)
