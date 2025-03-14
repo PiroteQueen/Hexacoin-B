@@ -26,6 +26,7 @@ class TableBase(SQLModel):
     - 删除操作优先使用软删除
     """
 
+    #用户唯一标识
     id: UUID = Field(
         default_factory=uuid4,
         primary_key=True,

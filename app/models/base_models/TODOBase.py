@@ -3,7 +3,7 @@
 from sqlmodel import Field
 from app.models.base_models.Base import TableBase
 
-
+#将TableBase继承到TODOBase
 class TODOBase(TableBase):
     
     # SQLModel Field 参数说明
@@ -37,7 +37,11 @@ class TODOBase(TableBase):
     # - schema_extra: 额外的schema信息
     
     
-    
+    #Field 参数说明
+    # - nullable: 是否可为空
+    # - unique: 是否唯一
+    # - index: 是否创建索引
+    # - description: 字段描述
     text: str = Field(
         nullable=False,
         unique=True,

@@ -76,7 +76,7 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
-# 注册API路由
+# 注册API路由，api router 是所有路由的集合，可分组
 app.include_router(api_router, prefix=settings.API_V1_STR)
 
 

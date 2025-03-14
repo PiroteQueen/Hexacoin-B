@@ -1,0 +1,2 @@
+
+basemodel里只写自身特殊字段，公共字段在base.py
