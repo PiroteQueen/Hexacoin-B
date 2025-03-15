@@ -20,9 +20,9 @@ version: '3.8'
 services:
   # FastAPI 开发服务
   app:
-    image: fastapi-dev:latest
+    image: hexacoin-dev:latest
     # 设置开发容器名称
-    container_name: fastapi-dev   # 开发环境容器名称
+    container_name: hexacoin-dev   # 开发环境容器名称
     # 使用当前目录的 Dockerfile 构建开发容器
     build: 
       context: .
@@ -32,7 +32,7 @@ services:
     # 端口映射配置
     # 将开发容器的 8000 端口映射到主机的 8000 端口
     ports:
-      - "8000:8000"
+      - "18888:18888"
     volumes:
       - ./app:/WORKDIR/app
     # 加载本地开发环境变量
