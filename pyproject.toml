@@ -17,6 +17,7 @@ pydantic-settings = "^2.3.4"
 psycopg = {version = "^3.2.1", extras = ["binary", "pool"]}
 passlib = "^1.7.4"
 python-jose = "^3.3.0"
+openai = "^1.66.3"
 
 
 [build-system]

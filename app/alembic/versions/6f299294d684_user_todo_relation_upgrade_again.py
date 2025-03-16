@@ -1,8 +1,10 @@
+
+##时间戳为美区时间
 """user_todo_relation_upgrade_again
 
 Revision ID: 6f299294d684
 Revises: e83fc7777bd5
-Create Date: 2025-03-14 12:40:50.221721
+Create Date: 2025-03-14 12:40:50.221721 
 
 """
 from alembic import op
