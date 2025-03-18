@@ -1,11 +1,27 @@
 # 使用openai的api接口，生成一个ai的api接口
 import os
-from openai import OpenAI #openai的sdk，用poetry进行了安装
+from openai import BaseModel, OpenAI #openai的sdk，用poetry进行了安装
 from fastapi import APIRouter, Body, HTTPException, FastAPI, Request
 from fastapi.responses import StreamingResponse
 import json
 
 router = APIRouter()
+
+# 定义请求模型
+# 定义模型需要在路由函数之前
+class GuaRequest(BaseModel):
+    user_question: str = "我的事业发展如何？"
+    gua_current: str = "乾"
+    gua_future: str = "坤"
+    
+    class Config:
+        schema_extra = {
+            "example": {
+                "user_question": "我的事业发展如何？",
+                "gua_current": "乾",
+                "gua_future": "坤"
+            }
+        }
 
 # #openai的api接口
 # client = OpenAI(
@@ -187,20 +203,12 @@ def chat_stream(
 @router.post("/gua", summary="AI起卦接口")
 def chat_stream(
     request: Request,
-    gua_request: dict = Body(
-        ...,
-        example={
-            "user_question": "我的事业发展如何？",
-            "gua_current": "乾",
-            "gua_future": "坤"
-        },
-        description="起卦请求参数"
-    ),
+    gua_request: "GuaRequest" = Body(..., description="起卦请求参数"),
 ):
     # 从请求体中提取参数
-    user_question = gua_request.get("user_question", "")
-    gua_current = gua_request.get("gua_current", "")
-    gua_future = gua_request.get("gua_future", "")
+    user_question = gua_request.user_question
+    gua_current = gua_request.gua_current
+    gua_future = gua_request.gua_future
     
     # 初始化OpenAI客户端
     client = OpenAI(
@@ -291,3 +299,4 @@ def chat_stream(
         #     "Content-Encoding": "none",
         # }
     )
+

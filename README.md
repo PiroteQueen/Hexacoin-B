@@ -1,4 +1,4 @@
-# 纯想手作版fastapi最小化docker
+# chunxiang手作版fastapi最小化docker
 
 ## 项目简介
 
@@ -6,7 +6,7 @@
 
 ## 目录
 
-- [纯想手作版fastapi最小化docker](#纯想手作版fastapi最小化docker)
+- [HexaCoin-承接自chunxiang手作版fastapi最小化docker](#chunxiang手作版fastapi最小化docker)
   - [项目简介](#项目简介)
   - [目录](#目录)
   - [技术栈](#技术栈)
